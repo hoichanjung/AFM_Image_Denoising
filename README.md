@@ -1,7 +1,7 @@
 # Atomic Force MicroScope(AFM) Image Denoising
 
 ## Requirements
-- Python 3.8.11
+- Python 3.7.0
 - Cuda 11.1
 - pip install -r requirements.txt
 
