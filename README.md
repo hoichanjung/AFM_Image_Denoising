@@ -10,6 +10,7 @@
 2. AFM Image filtered from SKHynix (by Seung Jun JUNG)
 
 ### Sample Data
+![image](https://user-images.githubusercontent.com/59187215/168575819-5753a1b4-f7fc-4217-b216-5b3f808e03d6.png)
 ![image](https://user-images.githubusercontent.com/59187215/168575051-cc86d871-c79f-46fd-9277-0a78d5b1f904.png)
 
 ## Paper
@@ -20,7 +21,7 @@
 #### Comparing PSNR and SSIM of Image Denoising Deep Learning Models on AFM Images with Random, Line, Scar, and Hum Noise.
 ![image](https://user-images.githubusercontent.com/59187215/168575186-0e9086dd-8147-4bfd-9f88-50075ae36cc6.png)
 #### PSNR vs. inference time on the AFM image
-![image](https://user-images.githubusercontent.com/59187215/168575250-ef47209f-1a6e-41eb-ab7a-0ce6a5be9a8f.png)
+![image](https://user-images.githubusercontent.com/59187215/168575778-1aea355e-925b-4e99-9932-a06e4a9023cc.png)
 
 ### Qualitative Result
 #### Random Noise
