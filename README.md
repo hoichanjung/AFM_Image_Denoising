@@ -13,8 +13,7 @@
 ![image](https://user-images.githubusercontent.com/59187215/168575051-cc86d871-c79f-46fd-9277-0a78d5b1f904.png)
 
 ## Paper
-- Comparative Study of Deep Learning Algorithms for Atomic Force Microscope Image Denoising
-- Paper: (Hoichan Jung, Giwoong Han, Seong Jun Jung and Sung Won Han)
+- Comparative Study of Deep Learning Algorithms for Atomic Force Microscope Image Denoising (Hoichan Jung, Giwoong Han, Seong Jun Jung and Sung Won Han)
 > Atomic force microscopy (AFM) enables direct visualisation of surface topography at the nanoscale. However, post-processing is generally required to obtain accurate, precise, and reliable AFM images owing to the presence of image artefacts. In this study, we compared and analysed state-of-the-art deep learning models, namely MPRNet, HINet, Uformer, and Restormer, with respect to denoising of AFM images containing four types of noise. Specifically, the denoising performance and inference time of these algorithms on AFM images were compared. Moreover, the peak signal-to-noise ratio and structural similarity index map were used to evaluate the denoising performance.
 
 ### Quantitative Result
