@@ -6,13 +6,23 @@
 - pip install -r requirements.txt
 
 ## Data Description
-1. 652 Dummy AFM Images with 3 Types of Noise (Random/Line/Scar)
-2. AFM Image collected from SKHynix (by Seung Jun JUNG)
+1. 652 Dummy AFM Images with 4 Types of Noise (Random/Line/Scar/Hum)
+2. AFM Image filtered from SKHynix (by Seung Jun JUNG)
 
-## Model
-- HINet: Half Instance Normalization Network for Image Restoration
-- Paper: https://arxiv.org/abs/2105.06086 (Liangyu Chen, Xin Lu, Jie Zhang, Xiaojie Chu, Chengpeng Chen)
-> In this paper, we explore the role of Instance Normalization in low-level vision tasks. Specifically, we present a novel block: Half Instance Normalization Block (HIN Block), to boost the performance of image restoration networks. Based on HIN Block, we design a simple and powerful multi-stage network named HINet, which consists of two subnetworks. With the help of HIN Block, HINet surpasses the state-of-the-art (SOTA) on various image restoration tasks. For image denoising, we exceed it 0.11dB and 0.28 dB in PSNR on SIDD dataset, with only 7.5% and 30% of its multiplier-accumulator operations (MACs), 6.8 times and 2.9 times speedup respectively. For image deblurring, we get comparable performance with 22.5% of its MACs and 3.3 times speedup on REDS and GoPro datasets. For image deraining, we exceed it by 0.3 dB in PSNR on the average result of multiple datasets with 1.4 times speedup. With HINet, we won 1st place on the NTIRE 2021 Image Deblurring Challenge - Track2. JPEG Artifacts, with a PSNR of 29.70.
+### Sample Data
+![image](https://user-images.githubusercontent.com/59187215/168575051-cc86d871-c79f-46fd-9277-0a78d5b1f904.png)
 
-### Network Architecture
-![HINET](https://user-images.githubusercontent.com/59187215/139525445-cfb34d9e-0772-4658-ae72-1b303652c77a.png)
+## Paper
+- Comparative Study of Deep Learning Algorithms for Atomic Force Microscope Image Denoising
+- Paper: (Hoichan Jung, Giwoong Han, Seong Jun Jung and Sung Won Han)
+> Atomic force microscopy (AFM) enables direct visualisation of surface topography at the nanoscale. However, post-processing is generally required to obtain accurate, precise, and reliable AFM images owing to the presence of image artefacts. In this study, we compared and analysed state-of-the-art deep learning models, namely MPRNet, HINet, Uformer, and Restormer, with respect to denoising of AFM images containing four types of noise. Specifically, the denoising performance and inference time of these algorithms on AFM images were compared. Moreover, the peak signal-to-noise ratio and structural similarity index map were used to evaluate the denoising performance.
+
+### Quantitative Result
+![image](https://user-images.githubusercontent.com/59187215/168575186-0e9086dd-8147-4bfd-9f88-50075ae36cc6.png)
+![image](https://user-images.githubusercontent.com/59187215/168575250-ef47209f-1a6e-41eb-ab7a-0ce6a5be9a8f.png)
+
+### Qualitative Result
+![image](https://user-images.githubusercontent.com/59187215/168575270-d9a418aa-1c49-4b88-be8a-dc810abdaba6.png)
+![image](https://user-images.githubusercontent.com/59187215/168575281-d6d866eb-a41e-42af-8805-3c9ed6784829.png)
+![image](https://user-images.githubusercontent.com/59187215/168575289-86cd9228-0265-4877-91ee-82398dec7911.png)
+![image](https://user-images.githubusercontent.com/59187215/168575300-14c80cb6-1712-41a2-a7ac-9ff4458ac6a2.png)
