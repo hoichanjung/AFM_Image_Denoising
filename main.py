@@ -1,7 +1,14 @@
+"""
+
+Copyright (C) 2021 Hoichan JUNG <hoichanjung@korea.ac.kr> - All Rights Reserved
+
+"""
+
 import os
 import time
 import pprint
 import pandas as pd
+import neptune.new as neptune
 import warnings
 warnings.filterwarnings(action='ignore')
 
@@ -18,15 +25,23 @@ def main():
 
     print('<---- Training Params ---->')
     pprint.pprint(cfg)
+
+    run = neptune.init(project="fdai.hoichan.d.jung/AFMdenoising",
+                    api_token="eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiIzODU1NzNkNi03MWE4LTRhZjktOTM2Yi03OGFhMThiY2E2ODMifQ==",
+                    mode=cfg.neptune)
     
+    run['model'] = cfg.model
+    run['noise'] = cfg.noise
+    run['exp_num'] = cfg.exp_num
+    run['epoch'] = cfg.epochs
 
     if cfg.action == 'train':
-        runTrain()
+        runTrain(run)
     elif cfg.action == 'test':
-        runTest()
+        runTest(run)
 
 #--------------------------------------------------------------------------------
-def runTrain():
+def runTrain(run):
 
     os.environ["CUDA_VISIBLE_DEVICES"] = cfg.gid
 
@@ -45,14 +60,14 @@ def runTrain():
     logger = get_model_logger(modelName)
     # -------------------- TRAIN / VALIDATION
     print('Training NN architecture = ', nnArchitecture)
-    Trainer.train(pathDirData, noiseType, nnArchitecture, batchSize, trMaxEpoch, imgtransResize, modelName, logger)
+    Trainer.train(pathDirData, noiseType, nnArchitecture, batchSize, trMaxEpoch, imgtransResize, modelName, logger, run)
 
     # -------------------- TEST    
     print('Testing the trained model')
-    Trainer.test(pathDirData, noiseType, nnArchitecture, batchSize, imgtransResize, modelName, logger)
+    Trainer.test(pathDirData, noiseType, nnArchitecture, batchSize, imgtransResize, modelName, logger, run)
 
 #--------------------------------------------------------------------------------
-def runTest():
+def runTest(run):
     os.environ["CUDA_VISIBLE_DEVICES"] = cfg.gid
     
     pathDirData = '../0802_Dataset/'
@@ -64,12 +79,13 @@ def runTest():
     batchSize = cfg.b
     
     modelName = f'Denoising_AFM_{nnArchitecture}_{noiseType}_exp{expNum}_{time.strftime("%m%d")}'
+    # modelName = cfg.ckpt
     
     make_results_directory(modelName)
     logger = get_model_logger(modelName)
     # -------------------- TEST
     print('Testing the trained model')
-    Trainer.test(pathDirData, noiseType, nnArchitecture, batchSize, imgtransResize, modelName, logger)
+    Trainer.test(pathDirData, noiseType, nnArchitecture, batchSize, imgtransResize, modelName, logger, run)
 
 #--------------------------------------------------------------------------------
 

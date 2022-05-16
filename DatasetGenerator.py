@@ -1,3 +1,9 @@
+"""
+
+Copyright (C) 2021 Hoichan JUNG <hoichanjung@korea.ac.kr> - All Rights Reserved
+
+"""
+
 import os
 import cv2
 import numpy as np
@@ -15,8 +21,8 @@ class DatasetGenerator(Dataset):
         self.ImagePaths = []
 
         imageList = os.listdir(self.originalDir)
-        train, test = train_test_split(imageList, test_size=0.3, shuffle=False)
-        train, valid = train_test_split(train, test_size=0.3, shuffle=False)
+        train, test = train_test_split(imageList, test_size=0.2, shuffle=False)
+        train, valid = train_test_split(train, test_size=0.25, shuffle=False)
 
         if dataset == 'train':
             self.ImagePaths = train
