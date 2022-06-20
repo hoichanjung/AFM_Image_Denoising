@@ -7,7 +7,7 @@ def getConfig():
     parser.add_argument('action', choices=('train', 'test'))
     parser.add_argument('--exp_num', default='1', type=str,
                         help='experiment number')
-    parser.add_argument('--neptune', default='sync', type=str,
+    parser.add_argument('--neptune', default='offline', type=str,
                         help='update on neptune (sync/offline)')
                      
     # dataset
