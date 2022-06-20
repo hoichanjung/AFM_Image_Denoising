@@ -6,10 +6,6 @@
 - pip install -r requirements.txt
 
 ## Data Description
-Data : Organic Electronics Morphology (https://drive.google.com/drive/folders/1ChhN62Z_0zL-dqOZt-5UL1vwYGwMM4-5?usp=sharing)
-- raw_data.zip (raw data)
-- 0802_Dataset.zip (ground-truth and input data)
-
 
 ### Filtered Image (by Seung Jun JUNG)
 ![image](https://user-images.githubusercontent.com/59187215/174540095-6379d112-1a53-428b-a0f7-ba671a4f70d7.png)
