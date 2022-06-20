@@ -1,9 +1,4 @@
-# python main.py train --model UNET       --noise Random  --b 16   --ckpt   --neptune offline
-# python main.py train --model UNET       --noise Line    --b 16   --ckpt  --neptune offline
-# python main.py train --model UNET       --noise Scar    --b 16   --ckpt  --neptune offline
-# python main.py train --model UNET       --noise Hum     --b 16   --ckpt  --neptune offline
-
-python main.py test --model HINET      --noise Random  --b 16   --ckpt Denoising_AFM_HINET_Random_exp1_0214
+python main.py test --model HINET      --noise Random  --b 16   --ckpt Denoising_AFM_HINET_Random_exp1_0214 --neptune offline
 python main.py test --model HINET      --noise Line    --b 16   --ckpt Denoising_AFM_HINET_Line_exp1_0214 
 python main.py test --model HINET      --noise Scar    --b 16   --ckpt Denoising_AFM_HINET_Scar_exp1_0214 
 python main.py test --model HINET      --noise Hum     --b 16   --ckpt Denoising_AFM_HINET_Hum_exp1_0215 

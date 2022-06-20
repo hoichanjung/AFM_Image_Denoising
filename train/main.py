@@ -78,8 +78,8 @@ def runTest(run):
     imgtransResize = cfg.resize
     batchSize = cfg.b
     
-    modelName = f'Denoising_AFM_{nnArchitecture}_{noiseType}_exp{expNum}_{time.strftime("%m%d")}'
-    # modelName = cfg.ckpt
+    # modelName = f'Denoising_AFM_{nnArchitecture}_{noiseType}_exp{expNum}_{time.strftime("%m%d")}'
+    modelName = cfg.ckpt
     
     make_results_directory(modelName)
     logger = get_model_logger(modelName)

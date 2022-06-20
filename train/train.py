@@ -46,9 +46,7 @@ class Trainer():
         elif nnArchitecture == 'UFORMER':
             model = Uformer(img_size=imgtransResize, in_chans=1, token_mlp='ffn').cuda()
         elif nnArchitecture == 'RESTORMER':
-            model = Restormer(inp_channels=1, out_channels=1, LayerNorm_type='BiasFree').cuda()     
-        elif nnArchitecture == 'NAFNET':
-            model = NAFNet(img_channel=1).cuda()     
+            model = Restormer(inp_channels=1, out_channels=1, LayerNorm_type='BiasFree').cuda()         
 
         macs, params = get_model_complexity_info(model, (1, imgtransResize, imgtransResize), as_strings=True,
                                                 print_per_layer_stat=False, verbose=True)
@@ -65,7 +63,6 @@ class Trainer():
         pathModel = f'results/{model_name}/model.pth.tar'
        
         # -------------------- SETTINGS: DATA TRANSFORMS
-        # normalize = transforms.Normalize([0.5], [0.5])
         transformList = []
         # transformList.append(transforms.RandomHorizontalFlip())
         # transformList.append(transforms.RandomVerticalFlip())
@@ -73,6 +70,7 @@ class Trainer():
         # transformList.append(transforms.RandomRotation(90))
         transformList.append(transforms.Resize(imgtransResize))
         transformList.append(transforms.ToTensor())
+        # transformList.append(transforms.Normalize([0.5], [0.5]))
         transform = transforms.Compose(transformList)
 
         # -------------------- SETTINGS: DATASET BUILDERS
@@ -109,8 +107,7 @@ class Trainer():
             print('current lr : {:.7f}'.format(optimizer.param_groups[0]['lr']))
 
             if nnArchitecture == 'UNET' or nnArchitecture == 'REDNET' or nnArchitecture == 'UNET_REDNET'\
-                or nnArchitecture == 'VDSR' or nnArchitecture == 'UFORMER' or nnArchitecture == 'RESTORMER'\
-                or nnArchitecture == 'NAFNET':
+                or nnArchitecture == 'VDSR' or nnArchitecture == 'UFORMER' or nnArchitecture == 'RESTORMER':
                 epochTrainUNET(model, dataLoaderTrain, optimizer, criterion_char, criterion_edge)
                 lossVal, losstensor = epochValidUNET(model, dataLoaderValid, criterion_char, criterion_edge, epochID, model_name)
 
@@ -157,20 +154,17 @@ class Trainer():
             model = Uformer(img_size=imgtransResize, in_chans=1, token_mlp='ffn').cuda()
         elif nnArchitecture == 'RESTORMER':
             model = Restormer(inp_channels=1, out_channels=1, LayerNorm_type='BiasFree').cuda()      
-        elif nnArchitecture == 'NAFNET':
-            model = NAFNet(img_channel=1).cuda() 
+
 
         model = torch.nn.DataParallel(model).cuda()
         pathModel = f'results/{model_name}/model.pth.tar'
         load_pretrained(model, pathModel)
 
         # -------------------- SETTINGS: DATA TRANSFORMS
-        # normalize = transforms.Normalize([0.5], [0.5])
-        # normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-
         transformList = []
         transformList.append(transforms.Resize(imgtransResize))
         transformList.append(transforms.ToTensor())
+        # transformList.append(transforms.Normalize([0.5], [0.5]))
         transform = transforms.Compose(transformList)
         
         # -------------------- SETTINGS: DATASET BUILDERS
@@ -196,8 +190,7 @@ class Trainer():
                 noise = torch.cat((noise, img_noise), 0)        
                 
                 if nnArchitecture == 'UNET' or nnArchitecture == 'REDNET' or nnArchitecture == 'UNET_REDNET'\
-                    or nnArchitecture == 'VDSR' or nnArchitecture == 'UFORMER' or nnArchitecture == 'RESTORMER'\
-                    or nnArchitecture == 'NAFNET':
+                    or nnArchitecture == 'VDSR' or nnArchitecture == 'UFORMER' or nnArchitecture == 'RESTORMER':
                     pred = torch.cat((pred, img_output), 0)
                 elif nnArchitecture == 'HINET':
                     pred = torch.cat((pred, img_output[1]), 0)

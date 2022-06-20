@@ -141,24 +141,12 @@ def torchPSNR(tar_img, prd_img):
     imdff = torch.clamp(prd_img,0,1) - torch.clamp(tar_img,0,1)
 
     rmse = (imdff**2).mean().sqrt()
-    pixel_max = 255
+    pixel_max = 1
     psnr = 20*torch.log10(pixel_max/rmse)
 
     return psnr
 
 def save_results(tar_img, noise_img, prd_img, save_path):
-    # pixel_max = 255
-
-    # noise_imdff = torch.clamp(noise_img,0,1) - torch.clamp(tar_img,0,1)
-    # pred_imdff = torch.clamp(prd_img,0,1) - torch.clamp(tar_img,0,1)
-    
-    # imdff = noise_imdff**2
-    # rmse = imdff.view(imdff.size(0), -1).mean(1, keepdim=True).sqrt()
-    # noise_psnr = 20*torch.log10(pixel_max/rmse)
-
-    # imdff = pred_imdff**2
-    # rmse = imdff.view(imdff.size(0), -1).mean(1, keepdim=True).sqrt()
-    # pred_psnr = 20*torch.log10(pixel_max/rmse)
     
     noise_psnr = torchPSNR(tar_img, noise_img)
     pred_psnr = torchPSNR(tar_img, prd_img)

@@ -15,7 +15,7 @@ from torch.utils.data import Dataset
 class DatasetGenerator(Dataset):
     def __init__(self, pathDirData, dataset, noise_type, transform, logger):
 
-        self.originalDir = pathDirData + '/Original'
+        self.originalDir = pathDirData + '/Ground-Truth'
         self.noiseDir = pathDirData + f'/{noise_type}'
         self.transform = transform
         self.ImagePaths = []

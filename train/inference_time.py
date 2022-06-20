@@ -16,6 +16,8 @@ elif nnArchitecture == 'REDNET':
     model = REDNet20(in_channels=1, num_layers=6).cuda()
 elif nnArchitecture == 'UNET_REDNET':
     model = UNet_REDNet().cuda()                      
+elif nnArchitecture == 'VDSR':
+    model = VDSR().cuda()            
 elif nnArchitecture == 'HINET':
     model = HINet(in_chn = 1).cuda()
 elif nnArchitecture == 'MPRNET':
@@ -24,7 +26,6 @@ elif nnArchitecture == 'UFORMER':
     model = Uformer(img_size=imgtransResize, in_chans=1).cuda()
 elif nnArchitecture == 'RESTORMER':
     model = Restormer(inp_channels=1, out_channels=1, LayerNorm_type='BiasFree').cuda()      
-
 
 model = torch.nn.DataParallel(model).cuda()
 dummy_input = torch.randn(1, 1, 256, 256, dtype=torch.float).cuda()
