@@ -18,7 +18,7 @@ def main():
     get_noise_setting(args)
 
     image_path = "./raw_data/AFM4005/" # Path of Raw Data
-    os.chdir(image_path)
+    # os.chdir(image_path)
     image_list = os.listdir(image_path)
 
     filtered_image_path = "./0802_Dataset/Ground-Truth/" # Path of Filtered Data
@@ -38,7 +38,7 @@ def main():
 
     for image_id, image_file in enumerate(image_list):
         noise_save_path = os.path.join(save_path, image_file)
-        container = gwy.gwy_file_load(image_file, gwy.RUN_NONINTERACTIVE)
+        container = gwy.gwy_file_load(image_path+image_file, gwy.RUN_NONINTERACTIVE)
         gwy.gwy_app_data_browser_add(container)
         
         for i in gwy.gwy_app_data_browser_get_data_ids(container):
