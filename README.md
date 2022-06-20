@@ -6,7 +6,7 @@
 - pip install -r requirements.txt
 
 ## Data Description
-Data available at https://drive.google.com/drive/folders/1ChhN62Z_0zL-dqOZt-5UL1vwYGwMM4-5?usp=sharing
+Organic Electronics Morphology : https://drive.google.com/drive/folders/1ChhN62Z_0zL-dqOZt-5UL1vwYGwMM4-5?usp=sharing
 - raw_data.zip (raw data)
 - 0802_Dataset.zip (ground-truth and input data)
 
