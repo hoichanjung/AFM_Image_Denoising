@@ -17,11 +17,11 @@ def main():
 
     get_noise_setting(args)
 
-    image_path = "E:/SKhynix/raw_data/AFM4005/" # Path of Raw Data
+    image_path = "./raw_data/AFM4005/" # Path of Raw Data
     os.chdir(image_path)
     image_list = os.listdir(image_path)
 
-    filtered_image_path = "E:/SKhynix/0802_Dataset/Original/" # Path of Filtered Data
+    filtered_image_path = "./0802_Dataset/Ground-Truth/" # Path of Filtered Data
     filtered_image_list = os.listdir(filtered_image_path)
     image_list = [image for image in image_list if image in filtered_image_list] # Only use image without noise
    
