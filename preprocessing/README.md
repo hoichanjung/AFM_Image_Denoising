@@ -8,7 +8,6 @@
 
 
 ```
-python
 python main.py --noise_type Line
 python main.py --noise_type Scar
 python main.py --noise_type Hum
