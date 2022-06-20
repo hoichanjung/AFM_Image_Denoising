@@ -6,12 +6,12 @@
 - pip install -r requirements.txt
 
 ## Data Description
-1. 652 Dummy AFM Images with 4 Types of Noise (Random/Line/Scar/Hum)
-2. AFM Image filtered from SKHynix (by Seung Jun JUNG)
+1. AFM Image filtered from SKHynix (by Seung Jun JUNG)
 
 ### Filtered Image
 ![image](https://user-images.githubusercontent.com/59187215/174540095-6379d112-1a53-428b-a0f7-ba671a4f70d7.png)
 
+2. 652 Dummy AFM Images with 4 Types of Noise (Random/Line/Scar/Hum)
 ### Sample Image
 ![image](https://user-images.githubusercontent.com/59187215/168575051-cc86d871-c79f-46fd-9277-0a78d5b1f904.png)
 
