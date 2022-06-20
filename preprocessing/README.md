@@ -7,9 +7,11 @@
 - Pygwy, PyGTK2, PYCairo, PyGObject (https://sourceforge.net/projects/gwyddion/files/pygtk-win32/)
 
 
-"""python
+```
+python
 python main.py --noise_type Line
 python main.py --noise_type Scar
 python main.py --noise_type Hum
 python main.py --noise_type Random
-"""
+```
+
