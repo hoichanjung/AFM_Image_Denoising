@@ -11,13 +11,10 @@ Data available at https://drive.google.com/drive/folders/1ChhN62Z_0zL-dqOZt-5UL1
 - 0802_Dataset.zip (ground-truth and input data)
 
 
-1. AFM Image filtered from SKHynix (by Seung Jun JUNG)
-
-### Filtered Image
+### Filtered Image (by Seung Jun JUNG)
 ![image](https://user-images.githubusercontent.com/59187215/174540095-6379d112-1a53-428b-a0f7-ba671a4f70d7.png)
 
-2. 652 Dummy AFM Images with 4 Types of Noise (Random/Line/Scar/Hum)
-### Sample Image
+### Sample Image (652 AFM Images with Random/Line/Scar/Hum Noise)
 ![image](https://user-images.githubusercontent.com/59187215/168575051-cc86d871-c79f-46fd-9277-0a78d5b1f904.png)
 
 ## Paper
