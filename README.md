@@ -10,7 +10,8 @@
 2. AFM Image filtered from SKHynix (by Seung Jun JUNG)
 
 ### Filtered Image
-![image](https://user-images.githubusercontent.com/59187215/168575819-5753a1b4-f7fc-4217-b216-5b3f808e03d6.png)
+![image](https://user-images.githubusercontent.com/59187215/174540095-6379d112-1a53-428b-a0f7-ba671a4f70d7.png)
+
 ### Sample Image
 ![image](https://user-images.githubusercontent.com/59187215/168575051-cc86d871-c79f-46fd-9277-0a78d5b1f904.png)
 
