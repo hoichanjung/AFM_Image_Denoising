@@ -1,5 +1,3 @@
-# Noise Generation
-
 ## Download Data
 Organic Electronics Morphology (https://drive.google.com/drive/folders/1ChhN62Z_0zL-dqOZt-5UL1vwYGwMM4-5?usp=sharing)
 - raw_data.zip (raw data)
