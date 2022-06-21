@@ -1,5 +1,5 @@
 ## Download Data
-Organic Electronics Morphology (https://drive.google.com/drive/folders/1ChhN62Z_0zL-dqOZt-5UL1vwYGwMM4-5?usp=sharing)
+N. Persson. Organic electronics morphology, Oct 2017. (https://drive.google.com/drive/folders/1ChhN62Z_0zL-dqOZt-5UL1vwYGwMM4-5?usp=sharing)
 - raw_data.zip (raw data)
 - 0802_Dataset.zip (ground-truth and input data)
 
